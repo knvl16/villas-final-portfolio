@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Kenneth Denzel E. Villas - Web Developer Portfolio" />
+    <meta name="author" content="Kenneth Denzel E. Villas" />
+    <title>Kenneth Denzel E. Villas - Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #f4f8fb;
+        }
+        .section-card {
+            background: #fff;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 32px rgba(44,62,80,0.10);
+            padding: 2.5rem 2rem;
+            margin-bottom: 2.5rem;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .section-divider {
+            display: flex;
+            align-items: center;
+            margin: 2.5rem 0 2rem 0;
+        }
+        .section-divider .divider-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #1abc9c 0%, #2c3e50 100%);
+            border-radius: 2px;
+        }
+        .section-divider .divider-icon {
+            margin: 0 1rem;
+            color: #1abc9c;
+            font-size: 2rem;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .subsection-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1abc9c;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .subsubsection-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-top: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+        .profile-banner {
+            background: linear-gradient(135deg, #1abc9c 0%, #2c3e50 100%);
+            box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+            text-align: center;
+            padding: 4rem 1rem 3rem 1rem;
+            color: #fff;
+            margin-bottom: 2.5rem;
+        }
+        .profile-banner img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+            margin-bottom: 1.5rem;
+            border: 6px solid #fff;
+        }
+        .profile-banner h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            text-shadow: 0 2px 8px rgba(44,62,80,0.18);
+        }
+        .profile-banner .lead {
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-shadow: 0 1px 4px rgba(44,62,80,0.12);
+        }
+        .navbar {
+            box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+        }
+        .sticky-top {
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        .gallery-grid img {
+            border-radius: 1rem;
+            box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .gallery-grid img:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+        }
+        .gallery-caption {
+            text-align: center;
+            font-size: 1rem;
+            color: #2c3e50;
+            margin-top: 0.5rem;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        .skills-list li {
+            background: #f4f8fb;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+            padding: 0.75rem 1.5rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .skills-list li:hover {
+            background: #e6f7f4;
+            box-shadow: 0 4px 16px rgba(26,188,156,0.10);
+        }
+        .skills-list i {
+            margin-right: 0.75rem;
+            font-size: 1.7em;
+        }
+        .btn-primary, .download-cv-btn {
+            background: linear-gradient(90deg, #1abc9c 0%, #2c3e50 100%);
+            border: none;
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 2rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-primary:hover, .download-cv-btn:hover {
+            background: linear-gradient(90deg, #15967d 0%, #34495e 100%);
+            transform: translateY(-2px) scale(1.03);
+            color: #fff;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #1abc9c;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            font-size: 2rem;
+            box-shadow: 0 4px 16px rgba(44,62,80,0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            cursor: pointer;
+            opacity: 0.85;
+            transition: background 0.2s, opacity 0.2s;
+        }
+        .back-to-top:hover {
+            background: #15967d;
+            opacity: 1;
+        }
+        @media (max-width: 600px) {
+            .profile-banner img { width: 120px; height: 120px; }
+            .profile-banner h1 { font-size: 2rem; }
+            .profile-banner .lead { font-size: 1rem; }
+            .section-card { padding: 1.2rem 0.5rem; }
+            .section-title { font-size: 1.3rem; }
+        }
+        /* Make mobile screenshots smaller in Capstone Project */
+        .capstone-mobile-img {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Make 4th Year screenshots larger in Machine Problem */
+        .machine-4thyr-img {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    </head>
+    <body id="page-top">
+        <!-- Name Banner -->
+        <div class="profile-banner">
+            <img src="assets/img/profile.png" alt="Profile Picture" />
+            <h1 class="mb-2">Kenneth Denzel E. Villas</h1>
+            <div class="lead mb-2">Web &amp; Mobile Developer</div>
+        </div>
+        <!-- About Me Introduction Section -->
+<div class="section-card" style="margin-top: 1.5rem;">
+    <h2 class="section-title" style="font-size:1.7rem;">About Me</h2>
+    <p style="font-size:1.15rem; color:#2c3e50; max-width:800px; margin:auto;">
+        I'm <b>Kenneth Denzel E. Villas</b>, a passionate web and mobile developer with a strong background in building modern, user-friendly applications. I love exploring new technologies and enjoy working with C#, Dart, Xamarin, Flutter, and a variety of web tools. I thrive in collaborative environments, value teamwork, and am committed to continuous learning and growth. My experience spans both academic and real-world projects, and I am always eager to take on exciting challenges. Welcome to my portfolio!
+    </p>
+</div>
+<!-- End About Me Introduction Section -->
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase sticky-top" id="mainNav">
+            <div class="container">
+            <a class="navbar-brand" href="#page-top">Portfolio</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#download-cv">Download CV</a></li>
+                    <li class="nav-item dropdown nav-dropdown mx-0 mx-lg-1">
+                        <a class="nav-link dropdown-toggle py-3 px-0 px-lg-3 rounded" href="#curriculum-vitae" id="cvDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Curriculum Vitae</a>
+                        <ul class="dropdown-menu" aria-labelledby="cvDropdown">
+                            <li><a class="dropdown-item" href="#programming-skills">Programming Skills</a></li>
+                            <li><a class="dropdown-item" href="#certificates">Certificates</a></li>
+                            <li><a class="dropdown-item" href="#seminars">Seminars</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown nav-dropdown mx-0 mx-lg-1">
+                        <a class="nav-link dropdown-toggle py-3 px-0 px-lg-3 rounded" href="#software-developed" id="softwareDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Software Developed</a>
+                        <ul class="dropdown-menu" aria-labelledby="softwareDropdown">
+                            <li><a class="dropdown-item" href="#machine-problem">Machine Problem</a></li>
+                            <li><a class="dropdown-item" href="#capstone-project">Capstone Project</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#final-report">Final Report</a></li>
+                        </ul>
+                    </div>
+                </div>
+    </nav>
+
+    <!-- Download CV Section -->
+    <div class="section-card" id="download-cv">
+        <div class="section-divider"><div class="divider-line"></div><span class="divider-icon"><i class="fas fa-download"></i></span><div class="divider-line"></div></div>
+        <h2 class="section-title">Download CV</h2>
+        <a href="assets/cv/cvvilas.pdf" download="Kenneth_Denzel_Villas_CV.pdf" class="btn btn-primary"><i class="fas fa-download me-2"></i>Download CV</a>
+                </div>
+
+    <!-- Curriculum Vitae Section -->
+    <div class="section-card" id="curriculum-vitae">
+        <div class="section-divider"><div class="divider-line"></div><span class="divider-icon"><i class="fas fa-user"></i></span><div class="divider-line"></div></div>
+        <h2 class="section-title">Curriculum Vitae</h2>
+        <div class="section-indent">
+            <!-- Removed image of Curriculum Vitae and replaced with formatted text -->
+<div class="cv-content" style="background:#fff; border-radius:1.25rem; box-shadow:0 4px 32px rgba(44,62,80,0.10); padding:2rem; max-width:700px; margin:auto;">
+    <h2 style="font-weight:800; color:#2c3e50;">VILLAS, KENNETH DENZEL E.</h2>
+    <div style="font-weight:600; color:#1abc9c; margin-bottom:0.5rem;">APPLICATION/WEB DEVELOPMENT</div>
+    <div style="margin-bottom:1rem;">Brgy. Canlalay Binan Laguna | 09691814809 | kendenzel16@gmail.com</div>
+    <h3 class="subsubsection-title">EDUCATION</h3>
+    <ul>
+        <li><b>Institution:</b> Mapúa Malayan Colleges Laguna</li>
+        <li><b>Course:</b> Bachelor of Science in Information Technology (BSIT)</li>
+        <li><b>Year Level:</b> 4th Year (Undergraduate)</li>
+    </ul>
+    <h3 class="subsubsection-title">TECHNICAL SKILLS</h3>
+    <ul>
+        <li><b>Programming Languages:</b> C#, Python (Entry Level), Dart</li>
+        <li><b>Web Development:</b> HTML5, CSS3, JavaScript, ASP.NET</li>
+        <li><b>Mobile App Development:</b> Xamarin</li>
+        <li><b>Database Management:</b> PHP, Firebase, MS Access</li>
+    </ul>
+    <h3 class="subsubsection-title">PROJECTS & RESEARCH</h3>
+    <b>San Cristobal Flood Management System (SCFMS)</b> <span style="color:#888;">Jan 2025 – Present</span>
+    <ul>
+        <li>Developed a flood management system integrating GIS, LIDAR, and remote sensing.</li>
+        <li>Created an SCFMS Resident App with real-time flood alerts, mapping, and SOS functionality.</li>
+        <li>Utilized Firebase for data storage and security.</li>
+    </ul>
+    <b>E-commerce Movie Ticketing System</b> <span style="color:#888;">Feb 20 – Present</span>
+    <ul>
+        <li>Developed using ASP.NET with an MDB Access database.</li>
+        <li>Integrated a ticketing system with movie distributor management.</li>
+    </ul>
+    <b>Android Ticketing System</b> <span style="color:#888;">March 20, 2023 – April 3, 2023</span>
+    <ul>
+        <li>Developed using Xamarin for Android.</li>
+        <li>Implemented a system for users to buy tickets.</li>
+        <li>Used PHPMyAdmin and XAMPP for database management.</li>
+    </ul>
+    <h3 class="subsubsection-title">SEMINARS, TRAININGS & CERTIFICATION</h3>
+    <ul>
+        <li>CCNA: Introduction to Networks | 2022</li>
+        <li>AWS Academy Graduate – AWS Academy Cloud Foundations | 2023</li>
+        <li>Introduction to Edge Computing | 2024</li>
+        <li>Introduction to Cloud Computing | 2024</li>
+        <li>Introduction to Firewall | 2024</li>
+        <li>Wear OS: Emerging Technology for Internet and Learning of Everything | 2024</li>
+        <li>Software Defined Networking, Openflow, NFV & Open RAN | 2024</li>
+    </ul>
+    <h3 class="subsubsection-title">ADDITIONAL INFORMATION</h3>
+    <ul>
+        <li>Software Development & Emerging Technologies</li>
+        <li>Communication</li>
+        <li>Teamwork</li>
+        <li>Time Management</li>
+        <li>Problem Solving</li>
+    </ul>
+    <h3 class="subsubsection-title">REFERENCES</h3>
+    <b>Dahlia S. de Mesa</b><br/>
+    Faculty Member CCIS | Mapua Malayan Colleges Laguna<br/>
+    dcsdemesa@mcl.edu.ph
+</div>
+<!-- End of CV content -->
+            <!-- Programming Skills -->
+            <h3 class="subsection-title" id="programming-skills">Programming Skills</h3>
+            <div class="subsection-indent mb-3">
+                <ul class="skills-list">
+                    <li><i class="fab fa-html5" style="color:#e44d26;"></i>HTML5</li>
+                    <li><i class="fab fa-css3-alt" style="color:#1572b6;"></i>CSS3</li>
+                    <li><i class="fab fa-js-square" style="color:#f7df1e;"></i>JavaScript (ES6+)</li>
+                    <li><i class="fab fa-dart" style="color:#0175C2;"></i>Dart</li>
+                    <li><i class="fab fa-php" style="color:#777bb4;"></i>PHP (CodeIgniter)</li>
+                    <li><i class="fas fa-database" style="color:#00618a;"></i>MySQL</li>
+                    <li><i class="fab fa-react" style="color:#61dafb;"></i>React.js</li>
+                    <li><i class="fab fa-bootstrap" style="color:#7952b3;"></i>Bootstrap</li>
+                </ul>
+                    </div>
+            <!-- Certificates -->
+            <h3 class="subsection-title" id="certificates">Certificates</h3>
+            <div class="subsection-indent mb-3">
+                <div class="gallery-grid">
+                    <div>
+                        <img src="assets/certificates/softwaredefined.png" alt="Software Defined" class="img-fluid" />
+                        <div class="gallery-caption">Software Defined</div>
+                    </div>
+                    <div>
+                        <img src="assets/certificates/cloudcomputing.png" alt="Cloud Computing" class="img-fluid" />
+                        <div class="gallery-caption">Cloud Computing</div>
+                    </div>
+                    <div>
+                        <img src="assets/certificates/ai.png" alt="AI" class="img-fluid" />
+                        <div class="gallery-caption">Artificial Intelligence</div>
+                    </div>
+                    <div>
+                        <img src="assets/certificates/aws.png" alt="AWS" class="img-fluid" />
+                        <div class="gallery-caption">AWS</div>
+                    </div>
+                    <div>
+                        <img src="assets/certificates/Generative Ai_Villas_Certificate.jpg" alt="Generative AI" class="img-fluid" />
+                        <div class="gallery-caption">Generative AI</div>
+                    </div>
+                    <div>
+                        <img src="assets/certificates/Introduction to edge Computing_Villas_Certificate.png" alt="Introduction to Edge Computing" class="img-fluid" />
+                        <div class="gallery-caption">Introduction to Edge Computing</div>
+                    </div>
+                    <div>
+                        <img src="assets/certificates/ccna-introduction-to-networks.png" alt="CCNA Introduction to Networks" class="img-fluid" />
+                        <div class="gallery-caption">CCNA: Introduction to Networks</div>
+                    </div>
+                    <div>
+                        <img src="assets/certificates/Cybersecurity_VIllas_Certificiate.jpg" alt="Cybersecurity" class="img-fluid" />
+                        <div class="gallery-caption">Cybersecurity</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Seminars -->
+            <h3 class="subsection-title" id="seminars">Seminars</h3>
+            <div class="subsection-indent mb-3">
+                <ul>
+                    <li>Webinar Title: Introduction to Cloud Computing</li>
+                    <li>Webinar Title: Introduction to Edge Computing</li>
+                    <li>Webinar Title: Software-Defined Networking, OpenFlow, NFV, and Open RAN</li>
+                    <li>AI Summit: Unlocking the Future: Exploring different opportunities for computer science in artificial intelligence</li>
+                </ul>
+            </div>
+        </div>
+                                    </div>
+
+    <!-- Software Developed Section -->
+    <div class="section-card" id="software-developed">
+        <div class="section-divider"><div class="divider-line"></div><span class="divider-icon"><i class="fas fa-laptop-code"></i></span><div class="divider-line"></div></div>
+        <h2 class="section-title">Software Developed from 1st Year to 4th Year</h2>
+        <div class="section-indent">
+            <!-- Machine Problem -->
+            <h3 class="subsection-title" id="machine-problem">Machine Problem</h3>
+            <div class="subsection-indent mb-3">
+                <div class="fw-bold text-primary mb-2" style="font-size:1.1rem; letter-spacing:1px;">1st Year</div>
+                <div class="subsubsection-title mb-2">4 Pics 1 Word (Python)</div>
+                <div class="mb-2">A Python implementation of the classic 4 Pics 1 Word game.</div>
+                <div class="gallery-grid" style="max-width:600px;">
+                    <div>
+                        <img src="assets/machine problem/1st yr/4pics1word_1.png" alt="4 Pics 1 Word Screenshot 1" class="img-fluid" />
+                        <div class="gallery-caption">Game Screenshot 1</div>
+                    </div>
+                    <div>
+                        <img src="assets/machine problem/1st yr/4pics1word_2.png" alt="4 Pics 1 Word Screenshot 2" class="img-fluid" />
+                        <div class="gallery-caption">Game Screenshot 2</div>
+                    </div>
+                </div>
+                <h4 class="subsubsection-title">Discussion of the Features</h4>
+                <ul>
+                    <li>Real-time weather data dashboard</li>
+                    <li>Location-based forecasting</li>
+                    <li>Weather alerts and notifications</li>
+                </ul>
+                <h4 class="subsubsection-title">Software Used</h4>
+                <ul>
+                    <li>Python</li>
+                </ul>
+                <div class="fw-bold text-primary mb-2 mt-4" style="font-size:1.1rem; letter-spacing:1px;">2nd Year</div>
+                <div class="subsubsection-title mb-2">Xamarin Android - Ticketing App</div>
+                <div class="mb-2">A mobile ticketing application developed using Xamarin for Android in Visual Studio 2022 (C#).</div>
+                <div class="gallery-grid" style="max-width:600px;">
+                    <div>
+                        <img src="assets/machine problem/2nd yr/login2nd.png" alt="Login Screen" class="img-fluid" />
+                        <div class="gallery-caption">Login Screen</div>
+                    </div>
+                    <div>
+                        <img src="assets/machine problem/2nd yr/buy2nd.png" alt="Buy Ticket Screen" class="img-fluid" />
+                        <div class="gallery-caption">Buy Ticket Screen</div>
+                    </div>
+                    <div>
+                        <img src="assets/machine problem/2nd yr/checkout2nd.png" alt="Checkout Screen" class="img-fluid" />
+                        <div class="gallery-caption">Checkout Screen</div>
+                    </div>
+                    <div>
+                        <img src="assets/machine problem/2nd yr/selectticket2nd.png" alt="Select Ticket Screen" class="img-fluid" />
+                        <div class="gallery-caption">Select Ticket Screen</div>
+                    </div>
+                </div>
+                <h4 class="subsubsection-title">Discussion of the Features</h4>
+                <ul>
+                    <li>Buy tickets online for events or movies</li>
+                    <li>Select seats during the ticket purchase process</li>
+                </ul>
+                <h4 class="subsubsection-title">Software Used</h4>
+                <ul>
+                    <li>ASP.NET</li>
+                    <li>Visual Studio Code 2022</li>
+                </ul>
+                <div class="fw-bold text-primary mb-2 mt-4" style="font-size:1.1rem; letter-spacing:1px;">3rd Year</div>
+                <div class="subsubsection-title mb-2">Water Detection with Alert System</div>
+                <div class="mb-2">A system designed to detect water presence and provide alert or danger notifications. Developed using Arduino and Visual Studio 2022, this project focuses on real-time water level monitoring and safety alerts for hazardous conditions.</div>
+                <div class="gallery-grid" style="max-width:600px;">
+                    <div>
+                        <img src="assets/machine problem/3rd yr/floodsensor.png" alt="Flood Sensor Prototype" class="img-fluid" />
+                        <div class="gallery-caption">Flood Sensor Prototype</div>
+                    </div>
+                    <div>
+                        <img src="assets/machine problem/3rd yr/groupmates.png" alt="Project Presentation with Groupmates" class="img-fluid" />
+                        <div class="gallery-caption">Project Presentation with Groupmates</div>
+                    </div>
+                </div>
+                <h4 class="subsubsection-title">Discussion of the Features</h4>
+                <ul>
+                    <li>Real-time water detection and monitoring</li>
+                    <li>Alert and danger notifications for hazardous water levels</li>
+                    <li>Microcontroller-based solution for reliability</li>
+                </ul>
+                <h4 class="subsubsection-title">Software Used</h4>
+                <ul>
+                    <li>Arduino</li>
+                    <li>Visual Studio 2022</li>
+                </ul>
+                <div class="fw-bold text-primary mb-2 mt-4" style="font-size:1.1rem; letter-spacing:1px;">4th Year</div>
+                <div class="subsubsection-title mb-2">Web Dev - Ticketing System</div>
+                <div class="mb-2">A web development project for buying tickets and selecting seats.</div>
+                <div class="gallery-grid">
+                    <div>
+                        <a href="assets/machine problem/4th yr/webticket.png" target="_blank">
+                            <img src="assets/machine problem/4th yr/webticket.png" alt="Web Ticket Screenshot" class="img-fluid machine-4thyr-img" />
+                        </a>
+                        <div class="gallery-caption">Ticket Purchase Page</div>
+                    </div>
+                    <div>
+                        <a href="assets/machine problem/4th yr/nowshowing webdev.png" target="_blank">
+                            <img src="assets/machine problem/4th yr/nowshowing webdev.png" alt="Now Showing Screenshot" class="img-fluid machine-4thyr-img" />
+                        </a>
+                        <div class="gallery-caption">Now Showing</div>
+                    </div>
+                    <div>
+                        <a href="assets/machine problem/4th yr/webdev4thyr.png" target="_blank">
+                            <img src="assets/machine problem/4th yr/webdev4thyr.png" alt="Web Dev 4th Year Screenshot" class="img-fluid machine-4thyr-img" />
+                        </a>
+                        <div class="gallery-caption">Web Dev Dashboard</div>
+                    </div>
+                </div>
+                <h4 class="subsubsection-title">Discussion of the Features</h4>
+                <ul>
+                    <li>Buy tickets online for events or movies</li>
+                    <li>Select seats during the ticket purchase process</li>
+                </ul>
+                <h4 class="subsubsection-title">Software Used</h4>
+                <ul>
+                    <li>ASP.NET</li>
+                    <li>Visual Studio Code 2022</li>
+                </ul>
+            </div>
+            <!-- Capstone Project -->
+            <h3 class="subsection-title" id="capstone-project">Capstone Project</h3>
+            <div class="subsection-indent mb-3">
+                <h4 class="subsubsection-title">Discussion of the Features</h4>
+                <ul>
+                    <li>Real-time water level status monitoring via Lidar sensor integration, providing accurate and up-to-date flood status for users</li>
+                    <li>SOS feature for sending emergency help requests, allowing users to quickly notify authorities or responders during critical situations</li>
+                    <li>Announcement posting and viewing for community updates, enabling administrators or authorized users to broadcast important information</li>
+                    <li>Flood history tracking and visualization, letting users review past flood events and analyze trends for better preparedness</li>
+                    <li>Weather information and forecasting, giving users access to current weather conditions and forecasts relevant to their area</li>
+                    <li>User authentication and secure login for both web and mobile platforms</li>
+                    <li>Role-based access for different types of users: resident, barangay staff, and barangay staff (responder)</li>
+                    <li>Responsive design for seamless experience on both web and mobile devices</li>
+                    <li>Interactive dashboard for monitoring, announcements, and quick access to key features</li>
+                    <li>Modern, user-friendly interface with intuitive navigation</li>
+                </ul>
+                <h4 class="subsubsection-title">Screenshots of the GUI</h4>
+                <div class="subsection-indent mb-3">
+                    <h5 class="fw-bold mb-2">Web</h5>
+                    <div class="row g-3">
+                        <div class="col-md-4 col-6"><img src="assets/capstone project/web/userdashboardweb.png" alt="User Dashboard Web" class="img-fluid rounded shadow mb-2"><div class="small text-center">User Dashboard</div></div>
+                        <div class="col-md-4 col-6"><img src="assets/capstone project/web/loginadduserdashboard.png" alt="Login/Add User Dashboard" class="img-fluid rounded shadow mb-2"><div class="small text-center">Login/Add User Dashboard</div></div>
+                        <div class="col-md-4 col-6"><img src="assets/capstone project/web/floodhistory.png" alt="Flood History" class="img-fluid rounded shadow mb-2"><div class="small text-center">Flood History</div></div>
+                        <div class="col-md-4 col-6"><img src="assets/capstone project/web/rivermap.png" alt="River Map" class="img-fluid rounded shadow mb-2"><div class="small text-center">River Map</div></div>
+                        <div class="col-md-4 col-6"><img src="assets/capstone project/web/weatherweb.png" alt="Weather Web" class="img-fluid rounded shadow mb-2"><div class="small text-center">Weather Web</div></div>
+                        <div class="col-md-4 col-6"><img src="assets/capstone project/web/waterlevelstatus.jpg.png" alt="Water Level Status" class="img-fluid rounded shadow mb-2"><div class="small text-center">Water Level Status</div></div>
+                        <div class="col-md-4 col-6"><img src="assets/capstone project/web/webdashboard.png" alt="Web Dashboard" class="img-fluid rounded shadow mb-2"><div class="small text-center">Web Dashboard</div></div>
+                    </div>
+                    <h5 class="fw-bold mt-4 mb-2">Mobile</h5>
+                    <div class="row g-3">
+                        <div class="col-md-4 col-6"><img src="assets/capstone project/mobile/loginmobile.png" alt="Login Mobile" class="img-fluid rounded shadow mb-2 capstone-mobile-img"><div class="small text-center">Login</div></div>
+                        <div class="col-md-4 col-6"><img src="assets/capstone project/mobile/homepagemobile.png" alt="Homepage Mobile" class="img-fluid rounded shadow mb-2 capstone-mobile-img"><div class="small text-center">Homepage</div></div>
+                        <div class="col-md-4 col-6"><img src="assets/capstone project/mobile/newsfeedmobile.png" alt="News Feed Mobile" class="img-fluid rounded shadow mb-2 capstone-mobile-img"><div class="small text-center">News Feed</div></div>
+                        <div class="col-md-4 col-6"><img src="assets/capstone project/mobile/statusphone.png" alt="Status Mobile" class="img-fluid rounded shadow mb-2 capstone-mobile-img"><div class="small text-center">Status</div></div>
+                        <div class="col-md-4 col-6"><img src="assets/capstone project/mobile/weatherphone.png" alt="Weather Mobile" class="img-fluid rounded shadow mb-2 capstone-mobile-img"><div class="small text-center">Weather</div></div>
+                        <div class="col-md-4 col-6"><img src="assets/capstone project/mobile/rivermapphone.png" alt="River Map Mobile" class="img-fluid rounded shadow mb-2 capstone-mobile-img"><div class="small text-center">River Map</div></div>
+                        <div class="col-md-4 col-6"><img src="assets/capstone project/mobile/sosphone.png" alt="SOS Mobile" class="img-fluid rounded shadow mb-2 capstone-mobile-img"><div class="small text-center">SOS</div></div>
+                    </div>
+                </div>
+                <h4 class="subsubsection-title">Software Used</h4>
+                <ul>
+                    <li>Flutter</li>
+                    <li>Firebase</li>
+                    <li>Semaphore</li>
+                    <li>Hostinger</li>
+                </ul>
+                <h4 class="subsubsection-title">Hardware Used</h4>
+                <ul>
+                    <li>Maib TFmini S Lidar Sensor</li>
+                    <li>Lidar</li>
+                    <li>Power Station Portable Multifunctional Solar Power Station Large Capacity Generator 150W</li>
+                    <li>30 Pins and 38 Pins ESP32 Wi-Fi IoT Development Board</li>
+                    <li>SIM800L V2 5V Wireless</li>
+                </ul>
+            </div>
+        </div>
+                                    </div>
+
+    <!-- Final Report Section -->
+    <div class="section-card" id="final-report">
+        <div class="section-divider"><div class="divider-line"></div><span class="divider-icon"><i class="fas fa-file-alt"></i></span><div class="divider-line"></div></div>
+        <h2 class="section-title">Final Report</h2>
+        <div class="mb-5">
+            <h3>1. Overview of the Practicum Engagement</h3>
+            <p>Biñan City Hall serves as the central administrative office of the City Government of Biñan, located in the province of Laguna, Philippines. It provides a wide range of services including infrastructure development, health and social welfare, disaster preparedness, and public information dissemination. Among its key departments is the City Information Office (CIO), which is primarily responsible for managing and distributing official information to the public. This includes overseeing media content, announcements, and printed materials such as tarpaulins used for city events and government initiatives.</p>
+            <p>For this practicum engagement, I was assigned to the City Information Office and was part of a group of three members tasked with improving the existing workflow for tarpaulin printing requests. The current process previously managed manually often led to inefficiencies and lacked proper tracking and accountability. Our group was assigned to assist in the design and development of an automated Tarpaulin Ticketing System, which aims to streamline the request process, improve coordination between departments, and ensure proper documentation of all printing requests.</p>
+            <p>The system was developed using CodeIgniter 4 as the backend framework and MySQL as the database management system. My primary responsibilities focused on backend validation and user interface (UI) implementation, ensuring that user inputs were correctly processed and that the system provided a clean and user-friendly experience. These tasks were critical to maintaining data accuracy and overall system usability.</p>
+            <p>My practicum rendered a total of 384 hours, starting from April 22, 2025, and is expected to be completed by July 28, 2025. This hands-on experience allowed me to apply academic knowledge in a real-world setting, enhance my programming and problem-solving skills, and contribute to a functional system that will benefit the operations of Biñan City Hall.</p>
+        </div>
+        <div class="mb-5">
+            <h3>2. Presentation of Output</h3>
+            <p><em>Below are screenshots of the modules developed for the Tarpaulin Ticketing System, organized by user roles and functionality.</em></p>
+            <h4 class="mt-4 mb-3">User Module Screenshots</h4>
+            <div class="gallery-grid">
+                <div><img src="assets/img/portfolio/screenshot/user/login.png" alt="User Login Interface" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">User Login</div></div>
+                <div><img src="assets/img/portfolio/screenshot/user/userdashboard.png" alt="User Dashboard" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">User Dashboard</div></div>
+                <div><img src="assets/img/portfolio/screenshot/user/usercreateticket.png" alt="Create Ticket Form" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">Create Ticket</div></div>
+                <div><img src="assets/img/portfolio/screenshot/user/userchat.png" alt="User Chat Interface" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">User Chat</div></div>
+                <div><img src="assets/img/portfolio/screenshot/user/usercloserequest.png" alt="Close Request Interface" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">Close Request</div></div>
+                <div><img src="assets/img/portfolio/screenshot/user/rateclose.png" alt="Rate and Close Interface" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">Rate and Close</div></div>
+            </div>
+            <h4 class="mt-5 mb-3">Admin Module Screenshots</h4>
+            <div class="gallery-grid">
+                <div><img src="assets/img/portfolio/screenshot/admin/admindashboard.png" alt="Admin Dashboard" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">Admin Dashboard</div></div>
+                <div><img src="assets/img/portfolio/screenshot/admin/approveadmin.png" alt="Admin Approval Interface" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">Approve Admin</div></div>
+                <div><img src="assets/img/portfolio/screenshot/admin/rejectadmin.png" alt="Admin Rejection Interface" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">Reject Admin</div></div>
+                <div><img src="assets/img/portfolio/screenshot/admin/viewattachment.png" alt="View Attachments" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">View Attachments</div></div>
+                <div><img src="assets/img/portfolio/screenshot/admin/logsadmin.png" alt="Admin Logs" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">Admin Logs</div></div>
+            </div>
+            <h4 class="mt-5 mb-3">Department Head Module Screenshots</h4>
+            <div class="gallery-grid">
+                <div><img src="assets/img/portfolio/screenshot/depthead/deptdashboard.png" alt="Department Head Dashboard" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">Department Head Dashboard</div></div>
+                <div><img src="assets/img/portfolio/screenshot/depthead/approvedept.png" alt="Department Approval Interface" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">Approve Department</div></div>
+                <div><img src="assets/img/portfolio/screenshot/depthead/rejectdept.png" alt="Department Rejection Interface" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">Reject Department</div></div>
+            </div>
+            <h4 class="mt-5 mb-3">Printer Module Screenshots</h4>
+            <div class="gallery-grid">
+                <div><img src="assets/img/portfolio/screenshot/printer/printerdashboard.png" alt="Printer Dashboard" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">Printer Dashboard</div></div>
+                <div><img src="assets/img/portfolio/screenshot/printer/printerchat.png" alt="Printer Chat Interface" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">Printer Chat</div></div>
+                <div><img src="assets/img/portfolio/screenshot/printer/markedpickedup.png" alt="Mark as Picked Up" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">Mark as Picked Up</div></div>
+                <div><img src="assets/img/portfolio/screenshot/printer/pickeddupprinter.png" alt="Picked Up Printer Interface" class="img-fluid rounded shadow-sm"/><div class="gallery-caption">Picked Up Printer</div></div>
+            </div>
+            <div class="mt-5">
+                <h4>Detailed Discussion of Tasks and Assignments</h4>
+                <p>The Tarpaulin Ticketing System was developed as a comprehensive web application to streamline the tarpaulin printing request process at Biñan City Hall. The system consists of four main user roles, each with specific responsibilities and interfaces:</p>
+                <h5>User Module Responsibilities:</h5>
+                <ul>
+                    <li><strong>Authentication:</strong> Secure login system with role-based access control</li>
+                    <li><strong>Request Management:</strong> Create, view, and track tarpaulin printing requests</li>
+                    <li><strong>Communication:</strong> Chat functionality for discussing request details with administrators</li>
+                    <li><strong>Request Closure:</strong> Ability to close completed requests and provide ratings</li>
+                </ul>
+                <h5>Admin Module Responsibilities:</h5>
+                <ul>
+                    <li><strong>System Oversight:</strong> Comprehensive dashboard showing all system activities</li>
+                    <li><strong>Request Approval/Rejection:</strong> Review and approve or reject user requests with detailed feedback</li>
+                    <li><strong>Attachment Management:</strong> View and manage uploaded request attachments</li>
+                    <li><strong>Activity Logging:</strong> Maintain detailed logs of all system activities for audit purposes</li>
+                </ul>
+                <h5>Department Head Module Responsibilities:</h5>
+                <ul>
+                    <li><strong>Department Management:</strong> Oversee requests specific to their department</li>
+                    <li><strong>Approval Workflow:</strong> Review and approve requests within their department scope</li>
+                    <li><strong>Rejection Management:</strong> Provide detailed feedback when rejecting requests</li>
+                </ul>
+                <h5>Printer Module Responsibilities:</h5>
+                <ul>
+                    <li><strong>Print Job Management:</strong> View and manage assigned printing tasks</li>
+                    <li><strong>Communication:</strong> Coordinate with users and administrators regarding print specifications</li>
+                    <li><strong>Job Completion:</strong> Mark jobs as completed and track pickup status</li>
+                </ul>
+                <p>The system was developed using CodeIgniter 4 framework with MySQL database, implementing responsive design principles and ensuring cross-browser compatibility. The backend validation ensures data integrity while the user interface provides an intuitive experience for all user roles.</p>
+            </div>
+        </div>
+        <div class="mb-5">
+            <h3>3. Synthesis of the Practicum Engagement</h3>
+            <p>During my practicum at the City Information Office of Biñan, I gained a variety of valuable skills that contributed significantly to both my personal and professional development. One of the most important was enhancing my technical skills, particularly in backend development and user interface design using CodeIgniter 4 and MySQL. Working on a real-world system helped me better understand the importance of data validation, system logic, and responsive design.</p>
+            <p>In addition to technical growth, I also developed teamwork and collaboration skills, as I worked closely with two other group members throughout the project. We regularly coordinated tasks, resolved issues together, and supported one another in meeting our goals. This collaboration taught me how to communicate effectively and share responsibilities in a team environment.</p>
+            <p>Moreover, I improved my time management by balancing deadlines, organizing development phases, and adjusting to the work culture of a government office. This helped me become more disciplined and focused in handling project timelines and deliverables.</p>
+            <p>Overall, these skills have equipped me with a stronger foundation for my future career in the tech industry.</p>
+        </div>
+        <div class="mb-5">
+            <h3>4. Appendices</h3>
+            <ol>
+                <li>Competency-Based CV</li>
+                <li>Endorsement Letter</li>
+                <li>Practicum Acceptance</li>
+                <li>Liability Waiver</li>
+                <li>Training Plan</li>
+                <li>Complete Weekly Journal</li>
+            </ol>
+            <div class="mb-4">
+                <h5>Competency-Based CV</h5>
+                <img src="assets/img/portfolio/Curriculum Vitae.png" alt="Competency-Based CV" class="img-fluid mb-3" style="max-width:600px;"/>
+            </div>
+            <div class="mb-4">
+                <h5>Endorsement Letter</h5>
+                <img src="assets/img/portfolio/endorsementletter.png" alt="Endorsement Letter" class="img-fluid mb-3" style="max-width:600px;"/>
+            </div>
+            <div class="mb-4">
+                <h5>Practicum Acceptance</h5>
+                <img src="assets/img/portfolio/AcceptanceForm.png" alt="Practicum Confirmation and Acceptance Form" class="img-fluid mb-3" style="max-width:600px;"/>
+            </div>
+            <div class="mb-4">
+                <h5>Liability Waiver</h5>
+                <img src="assets/img/portfolio/Liability.png" alt="Student Training Agreement and Liability Waiver" class="img-fluid mb-3" style="max-width:600px;"/>
+            </div>
+            <div class="mb-4">
+                <h5>Training Plan</h5>
+                <img src="assets/img/portfolio/TrainingPlan.png" alt="Training Plan" class="img-fluid mb-3" style="max-width:600px;"/>
+            </div>
+            <div class="mb-4">
+                <h5>Complete Weekly Journal</h5>
+                <ul>
+                    <li><a href="assets/pdf/Week1_Form OVPAA-030G-Practicum Daily Journal.pdf" target="_blank">Week 1 - Practicum Daily Journal</a></li>
+                    <li><a href="assets/pdf/Week2_Form OVPAA-030G-Practicum Daily Journal.pdf" target="_blank">Week 2 - Practicum Daily Journal</a></li>
+                    <li><a href="assets/pdf/Week3_Form OVPAA-030G-Practicum Daily Journal.pdf" target="_blank">Week 3 - Practicum Daily Journal</a></li>
+                    <li><a href="assets/pdf/Week4_Form OVPAA-030G-Practicum Daily Journal.pdf" target="_blank">Week 4 - Practicum Daily Journal</a></li>
+                    <li><a href="assets/pdf/Week5_Form OVPAA-030G-Practicum Daily Journal.pdf" target="_blank">Week 5 - Practicum Daily Journal</a></li>
+                    <li><a href="assets/pdf/Week6_Form OVPAA-030G-Practicum Daily Journal.pdf" target="_blank">Week 6 - Practicum Daily Journal</a></li>
+                    <li><a href="assets/pdf/Week7_Form OVPAA-030G-Practicum Daily Journal.pdf" target="_blank">Week 7 - Practicum Daily Journal</a></li>
+                    <li><a href="assets/pdf/Week8_Form OVPAA-030G-Practicum Daily Journal.pdf" target="_blank">Week 8 - Practicum Daily Journal</a></li>
+                    <li><a href="assets/pdf/Week9_Form OVPAA-030G-Practicum Daily Journal - Copy.pdf" target="_blank">Week 9 - Practicum Daily Journal</a></li>
+                    <li><a href="assets/pdf/Week10_Form OVPAA-030G-Practicum Daily Journal - Copy.pdf" target="_blank">Week 10 - Practicum Daily Journal</a></li>
+                    <li><a href="assets/pdf/Week11_Form OVPAA-030G-Practicum Daily Journal - Copy.pdf" target="_blank">Week 11 - Practicum Daily Journal</a></li>
+                    <li><a href="assets/pdf/Week12_Form OVPAA-030G-Practicum Daily Journal.pdf" target="_blank">Week 12 - Practicum Daily Journal</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End Final Report Section -->
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <!-- Add a floating Back to Top button -->
+        <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});" title="Back to Top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </body>
+</html>
