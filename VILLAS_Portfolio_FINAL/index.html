@@ -368,55 +368,55 @@
             <div class="subsection-indent mb-3">
                 <div class="gallery-grid">
                     <div>
-                        <img src="assets/certificates/softwaredefined.png" alt="Software Defined" class="img-fluid" />
+                        <img src="assets/certificates/softwaredefined.png" alt="Software Defined" class="img-fluid cert-img" data-img="assets/certificates/softwaredefined.png" />
                         <div class="gallery-caption">Software Defined</div>
                     </div>
                     <div>
-                        <img src="assets/certificates/cloudcomputing.png" alt="Cloud Computing" class="img-fluid" />
+                        <img src="assets/certificates/cloudcomputing.png" alt="Cloud Computing" class="img-fluid cert-img" data-img="assets/certificates/cloudcomputing.png" />
                         <div class="gallery-caption">Cloud Computing</div>
                     </div>
                     <div>
-                        <img src="assets/certificates/ai.png" alt="AI" class="img-fluid" />
+                        <img src="assets/certificates/ai.png" alt="AI" class="img-fluid cert-img" data-img="assets/certificates/ai.png" />
                         <div class="gallery-caption">Artificial Intelligence</div>
                     </div>
                     <div>
-                        <img src="assets/certificates/aws.png" alt="AWS" class="img-fluid" />
+                        <img src="assets/certificates/aws.png" alt="AWS" class="img-fluid cert-img" data-img="assets/certificates/aws.png" />
                         <div class="gallery-caption">AWS</div>
                     </div>
                     <div>
-                        <img src="assets/certificates/Generative Ai_Villas_Certificate.jpg" alt="Generative AI" class="img-fluid" />
+                        <img src="assets/certificates/Generative Ai_Villas_Certificate.jpg" alt="Generative AI" class="img-fluid cert-img" data-img="assets/certificates/Generative Ai_Villas_Certificate.jpg" />
                         <div class="gallery-caption">Generative AI</div>
                     </div>
                     <div>
-                        <img src="assets/certificates/Introduction to edge Computing_Villas_Certificate.png" alt="Introduction to Edge Computing" class="img-fluid" />
+                        <img src="assets/certificates/Introduction to edge Computing_Villas_Certificate.png" alt="Introduction to Edge Computing" class="img-fluid cert-img" data-img="assets/certificates/Introduction to edge Computing_Villas_Certificate.png" />
                         <div class="gallery-caption">Introduction to Edge Computing</div>
                     </div>
                     <div>
-                        <img src="assets/certificates/ccna-introduction-to-networks.png" alt="CCNA Introduction to Networks" class="img-fluid" />
+                        <img src="assets/certificates/ccna-introduction-to-networks.png" alt="CCNA Introduction to Networks" class="img-fluid cert-img" data-img="assets/certificates/ccna-introduction-to-networks.png" />
                         <div class="gallery-caption">CCNA: Introduction to Networks</div>
                     </div>
                     <div>
-                        <img src="assets/certificates/Cybersecurity_VIllas_Certificiate.jpg" alt="Cybersecurity" class="img-fluid" />
+                        <img src="assets/certificates/Cybersecurity_VIllas_Certificiate.jpg" alt="Cybersecurity" class="img-fluid cert-img" data-img="assets/certificates/Cybersecurity_VIllas_Certificiate.jpg" />
                         <div class="gallery-caption">Cybersecurity</div>
                     </div>
                     <div>
-                        <img src="assets/certificates/googleitsupport.jpg" alt="Google IT Support" class="img-fluid" />
-                        <div class="gallery-caption">Google IT Support</div>
+                        <img src="assets/certificates/googleitsupport.jpg" alt="Google IT Support" class="img-fluid cert-img" data-img="assets/certificates/googleitsupport.jpg" />
+                        <div class="gallery-caption">Google IT Support (2025)</div>
                     </div>
                     <div>
-                        <img src="assets/certificates/technicalsupportfundamentals.png" alt="Technical Support Fundamentals" class="img-fluid" />
+                        <img src="assets/certificates/technicalsupportfundamentals.png" alt="Technical Support Fundamentals" class="img-fluid cert-img" data-img="assets/certificates/technicalsupportfundamentals.png" />
                         <div class="gallery-caption">Technical Support Fundamentals</div>
                     </div>
                     <div>
-                        <img src="assets/certificates/systemadminstration.png" alt="System Administration and IT Infrastructure Services" class="img-fluid" />
+                        <img src="assets/certificates/systemadminstration.png" alt="System Administration and IT Infrastructure Services" class="img-fluid cert-img" data-img="assets/certificates/systemadminstration.png" />
                         <div class="gallery-caption">System Administration and IT Infrastructure Services</div>
                     </div>
                     <div>
-                        <img src="assets/certificates/itsecuritydefense.png" alt="IT Security: Defense against the digital dark arts" class="img-fluid" />
+                        <img src="assets/certificates/itsecuritydefense.png" alt="IT Security: Defense against the digital dark arts" class="img-fluid cert-img" data-img="assets/certificates/itsecuritydefense.png" />
                         <div class="gallery-caption">IT Security: Defense against the digital dark arts</div>
                     </div>
                     <div>
-                        <img src="assets/certificates/unlockingthefuture.png" alt="Unlocking the Future IOT" class="img-fluid" />
+                        <img src="assets/certificates/unlockingthefuture.png" alt="Unlocking the Future IOT" class="img-fluid cert-img" data-img="assets/certificates/unlockingthefuture.png" />
                         <div class="gallery-caption">Unlocking the Future IOT</div>
                     </div>
                 </div>
@@ -430,6 +430,14 @@
                     <li>Webinar Title: Software-Defined Networking, OpenFlow, NFV, and Open RAN</li>
                     <li>AI Summit: Unlocking the Future: Exploring different opportunities for computer science in artificial intelligence</li>
                 </ul>
+            </div>
+            <!-- Certificate Modal -->
+            <div id="certModal" style="display:none; position:fixed; z-index:10000; left:0; top:0; width:100vw; height:100vh; background:rgba(44,62,80,0.85); align-items:center; justify-content:center;">
+                <div style="background:#fff; border-radius:1.25rem; box-shadow:0 8px 32px rgba(44,62,80,0.18); padding:2rem; max-width:90vw; max-height:90vh; display:flex; flex-direction:column; align-items:center; position:relative;">
+                    <button onclick="closeCertModal()" style="position:absolute; top:1rem; right:1rem; background:#1abc9c; color:#fff; border:none; border-radius:50%; width:40px; height:40px; font-size:1.5rem; cursor:pointer; box-shadow:0 2px 8px rgba(44,62,80,0.10);"><i class='fas fa-arrow-left'></i></button>
+                    <img id="certModalImg" src="" alt="Certificate" style="max-width:80vw; max-height:70vh; border-radius:1rem; box-shadow:0 2px 12px rgba(44,62,80,0.10);" />
+                </div>
+            </div>
             </div>
         </div>
                                     </div>
@@ -754,5 +762,26 @@
         <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'});" title="Back to Top">
             <i class="fas fa-arrow-up"></i>
         </button>
+        <script>
+        // Modal logic for certificate images
+        function openCertModal(imgSrc) {
+            document.getElementById('certModalImg').src = imgSrc;
+            document.getElementById('certModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeCertModal() {
+            document.getElementById('certModal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        // Attach click event to all certificate images
+        document.addEventListener('DOMContentLoaded', function() {
+            var certImgs = document.querySelectorAll('.cert-img');
+            certImgs.forEach(function(img) {
+                img.addEventListener('click', function() {
+                    openCertModal(img.getAttribute('data-img'));
+                });
+            });
+        });
+        </script>
     </body>
 </html>
